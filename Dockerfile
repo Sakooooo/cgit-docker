@@ -1,22 +1,20 @@
-FROM alpine:3.14
+FROM ubuntu:22.04
 
-RUN apk add --no-cache \
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install -y \
     gcc \
     git \
-    libzip \
-    openssl-dev \
-    openssl \
+    libzip-dev \
+    libssl-dev \
+    libcrypt-dev \
     luajit \
     make \
     curl \
     apache2 \ 
     libc-dev \
-    zlib \
-    zlib-dev \
-    libintl \
-    gettext \
-    gettext-dev \
-    gettext-libs 
+    zlib1g-dev \
+    gettext 
 RUN git clone https://git.zx2c4.com/cgit /cgit-src
 WORKDIR /cgit-src
 RUN git submodule init

@@ -14,7 +14,8 @@ RUN apt install -y \
     apache2 \ 
     libc-dev \
     zlib1g-dev \
-    gettext 
+    gettext \
+    apache2    
 RUN git clone https://git.zx2c4.com/cgit /cgit-src
 WORKDIR /cgit-src
 RUN git submodule init

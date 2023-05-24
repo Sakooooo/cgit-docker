@@ -4,5 +4,12 @@ RUN apk add --no-cache \
     gcc \
     git \
     libzip \
-    openssl \ 
-    luajit \
+    openssl-dev \
+    openssl \
+    luajit 
+RUN git clone https://git.zx2c4.com/cgit /cgit-src
+RUN cd /cgit-src
+RUN git submodule init
+RUN git submodule update
+# debug
+RUN ls

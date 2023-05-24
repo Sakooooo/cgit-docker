@@ -8,8 +8,6 @@ RUN apk add --no-cache \
     openssl \
     luajit 
 RUN git clone https://git.zx2c4.com/cgit /cgit-src
-RUN cd /cgit-src
+WORKDIR /cgit-src
 RUN git submodule init
 RUN git submodule update
-# debug
-RUN ls
